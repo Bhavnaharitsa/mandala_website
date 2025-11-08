@@ -13,41 +13,38 @@ export default function Home() {
     mindful: {
       title: 'Mindful Art',
       icon: '🎨',
-      description: 'Our Mindful Art collection features hand-drawn mandalas created with patience and intention. Each piece is designed to bring calm, balance, and presence into your space.',
+      description: 'Hand-drawn mandalas created with patience and intention.\n\nEach piece brings calm, balance, and presence to your space.',
       points: [
-        'Hand-drawn with meticulous attention to detail',
-        'Created with intention and mindfulness',
-        'Designed to promote calm and balance',
-        'Perfect for meditation spaces, bedrooms, or workspaces',
-        'Each piece is unique and carries positive energy'
-      ],
-      examples: 'Explore our gallery to see the full collection of mindful mandala designs, each crafted to bring harmony and peace into your daily life.'
+        'Meticulously hand-drawn with attention to detail',
+        'Created with mindfulness and intention',
+        'Promotes calm and balance',
+        'Ideal for meditation spaces, bedrooms, and workspaces',
+        'Unique pieces that carry positive energy'
+      ]
     },
     spiritual: {
       title: 'Spiritual Connection',
       icon: '✨',
-      description: 'Mandalas represent unity and wholeness. Our spiritual collection explores designs inspired by meditation, energy flow, and inner reflection.',
+      description: 'Mandalas represent unity and wholeness.\n\nExplore designs inspired by meditation, energy flow, and inner reflection.',
       points: [
         'Symbols of unity and cosmic order',
         'Inspired by ancient spiritual traditions',
-        'Designed to enhance meditation and reflection',
-        'Connect with your inner self and higher consciousness',
+        'Enhances meditation and reflection',
+        'Connects you with inner self and higher consciousness',
         'Perfect for sacred spaces and altars'
-      ],
-      examples: 'Discover mandalas that resonate with your spiritual journey, each piece created to deepen your connection with the divine.'
+      ]
     },
     energy: {
       title: 'Positive Energy Design',
       icon: '🌟',
-      description: 'Every mandala is crafted with care to radiate harmony and good energy. Perfect for elevating your room, workspace, or personal altar.',
+      description: 'Crafted to radiate harmony and good energy.\n\nElevate your room, workspace, or personal altar.',
       points: [
-        'Designed to radiate positive vibrations',
-        'Crafted with intention for energy flow',
-        'Enhances the atmosphere of any space',
-        'Perfect for feng shui and energy healing',
+        'Radiates positive vibrations',
+        'Designed for optimal energy flow',
+        'Enhances any space\'s atmosphere',
+        'Ideal for feng shui and energy healing',
         'Brings harmony and balance to your environment'
-      ],
-      examples: 'Transform your space with mandalas that carry positive energy, creating an environment of peace, harmony, and good fortune.'
+      ]
     }
   }
 
@@ -66,8 +63,8 @@ export default function Home() {
             <Image
               src={mandalaLogo}
               alt="Mandalas logo"
-              width={400}
-              height={400}
+              width={550}
+              height={550}
               priority
               className={styles.heroLogoImage}
             />
@@ -149,18 +146,22 @@ export default function Home() {
             </div>
             <div className={styles.modalBody}>
               <p className={styles.modalDescription}>
-                {getModalContent()?.description}
+                {getModalContent()?.description?.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < getModalContent()?.description.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
               </p>
-              <h3>What Makes Our Mandalas Special:</h3>
+              <h3 className={styles.modalSubheading}>What Makes Our Mandalas Special</h3>
               <ul className={styles.modalList}>
                 {getModalContent()?.points.map((point, index) => (
-                  <li key={index}>{point}</li>
+                  <li key={index}>
+                    <span className={styles.bulletIcon}>{getModalContent()?.icon}</span>
+                    {point}
+                  </li>
                 ))}
               </ul>
-              <div className={styles.modalExamples}>
-                <h3>Examples:</h3>
-                <p>{getModalContent()?.examples}</p>
-              </div>
             </div>
           </div>
         </div>

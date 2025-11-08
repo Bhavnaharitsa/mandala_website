@@ -21,6 +21,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #C2B067;
+  animation: glitter 1.8s ease-in-out forwards;
 }
 
 .navLinks {
@@ -54,6 +55,34 @@
 
 .navLinks a:hover {
   color: #C2B067 !important;
+}
+
+.navLinks a.active {
+  color: #EFBF04 !important;
+}
+
+.navLinks a.active::after {
+  background: #EFBF04;
+  width: 100%;
+}
+
+.logo.playing {
+  animation: glitter 1.8s ease-in-out forwards;
+}
+
+@keyframes glitter {
+  0% {
+    color: #C2B067;
+    text-shadow: 0 0 2px rgba(239, 191, 4, 0.2), 0 0 5px rgba(239, 191, 4, 0.15);
+  }
+  50% {
+    color: #EFBF04;
+    text-shadow: 0 0 8px rgba(239, 191, 4, 0.6), 0 0 16px rgba(239, 191, 4, 0.4);
+  }
+  100% {
+    color: #C2B067;
+    text-shadow: 0 0 2px rgba(239, 191, 4, 0.2), 0 0 5px rgba(239, 191, 4, 0.1);
+  }
 }
 
 .navLinks a[href="/gallery"]:hover {

@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import styles from './Navigation.module.css'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -37,6 +39,7 @@ export default function Navigation() {
               <Link 
                 href={link.href} 
                 onClick={() => setIsMenuOpen(false)}
+                className={pathname === link.href ? styles.active : ''}
               >
                 {link.label}
               </Link>

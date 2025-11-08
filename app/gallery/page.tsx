@@ -1,8 +1,23 @@
+import Image from 'next/image'
 import styles from './page.module.css'
 
+type GalleryItem = {
+  id: number
+  title: string
+  category: string
+  image?: string
+  alt?: string
+}
+
 // Sample gallery images - replace with your actual images
-const galleryImages = [
-  { id: 1, title: 'Artwork 1', category: 'Digital' },
+const galleryImages: GalleryItem[] = [
+  {
+    id: 1,
+    title: 'Artwork 1',
+    category: 'Digital',
+    image: '/bookmark_mandala.png',
+    alt: 'Gold bookmark mandala artwork',
+  },
   { id: 2, title: 'Artwork 2', category: 'Traditional' },
   { id: 3, title: 'Artwork 3', category: 'Digital' },
   { id: 4, title: 'Artwork 4', category: 'Mixed Media' },
@@ -26,12 +41,24 @@ export default function Gallery() {
           <div className={styles.galleryGrid}>
             {galleryImages.map((image) => (
               <div key={image.id} className={styles.galleryItem}>
-                <div className={styles.imagePlaceholder}>
-                  <div className={styles.placeholderContent}>
-                    <span className={styles.placeholderIcon}>🖼️</span>
-                    <span className={styles.placeholderText}>{image.title}</span>
+                {image.image ? (
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      src={image.image}
+                      alt={image.alt ?? image.title}
+                      className={styles.galleryImage}
+                      width={600}
+                      height={600}
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className={styles.imagePlaceholder}>
+                    <div className={styles.placeholderContent}>
+                      <span className={styles.placeholderIcon}>🖼️</span>
+                      <span className={styles.placeholderText}>{image.title}</span>
+                    </div>
+                  </div>
+                )}
                 <div className={styles.imageInfo}>
                   <h3>{image.title}</h3>
                   <p>{image.category}</p>

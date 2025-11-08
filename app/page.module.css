@@ -12,6 +12,7 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 0;
+  position: relative;
 }
 
 .heroContent {
@@ -21,6 +22,9 @@
   text-align: center;
   width: 100%;
   max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
@@ -92,11 +96,16 @@
 }
 
 .heroImage {
-  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .heroLogoImage {
@@ -106,8 +115,21 @@
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  align-self: center;
   height: auto;
+  animation: fadeIn 1.5s ease-in-out;
+  width: 550px;
+  height: 550px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
 }
 
 .gradientCircle {
@@ -271,6 +293,7 @@
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  color: #EFBF04;
 }
 
 .ctaButton {
@@ -367,24 +390,26 @@
 }
 
 .modalContent h2 {
-  color: #C2B067;
+  color: #EFBF04;
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
 .modalHeader {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .modalIcon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: iconPulse 1.5s ease-in-out infinite;
+  line-height: 1;
 }
 
 .modalHeader h2 {
@@ -398,34 +423,43 @@
 .modalDescription {
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  color: #EFBF04;
+  white-space: pre-line;
 }
 
-.modalContent h3 {
+.modalSubheading {
   color: #EFBF04;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .modalList {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .modalList li {
   padding: 0.75rem 0;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   position: relative;
-  color: #856A00;
-  line-height: 1.6;
+  color: #C2B067;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
-.modalList li::before {
-  content: '✨';
+.bulletIcon {
   position: absolute;
   left: 0;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
 }
 
 .modalExamples {
