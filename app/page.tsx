@@ -3,11 +3,12 @@
 import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import mandalaLogo from './mandala_logo.png'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
+  const featuresRef = useRef<HTMLElement | null>(null)
 
   const modalContent = {
     mindful: {
@@ -54,6 +55,12 @@ export default function Home() {
     return modalContent[activeModal as keyof typeof modalContent]
   }
 
+  useEffect(() => {
+    if (!featuresRef.current) return
+
+    setActiveModal(null)
+  }, [])
+
   return (
     <div className={styles.home}>
       {/* Hero Section */}
@@ -90,7 +97,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`section ${styles.features}`}>
+      <section ref={featuresRef} className={`section ${styles.features}`}>
         <div className="container">
           <h2 className="section-title">What We Offer</h2>
           <div className={styles.featureGrid}>
