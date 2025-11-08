@@ -342,17 +342,17 @@
 }
 
 .modalContent {
-  background: #0E1602;
-  border: 2px solid #856A00;
-  border-radius: 20px;
-  padding: 2.5rem;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
+  background: #856A00;
+  border: 1px solid rgba(62, 46, 0, 0.35);
+  border-radius: 16px;
+  padding: 1.6rem 1.6rem 1.4rem;
+  max-width: 520px;
+  width: min(90%, 520px);
+  max-height: 72vh;
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.3s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
 @keyframes slideUp {
@@ -368,43 +368,48 @@
 
 .modalClose {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: #C2B067;
-  font-size: 2rem;
+  top: 0.6rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(62, 46, 0, 0.35);
+  color: #2b1c00;
+  font-size: 1.4rem;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  pointer-events: auto;
 }
 
 .modalClose:hover {
-  background: rgba(194, 176, 103, 0.2);
-  transform: rotate(90deg);
-}
-
-.modalContent h2 {
-  color: #EFBF04;
-  font-size: 2rem;
-  margin-bottom: 0;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg) scale(1.05);
 }
 
 .modalHeader {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+  position: relative;
+}
+
+.modalHeader::after {
+  content: '';
+  position: absolute;
+  inset: -1.15rem -1.15rem 0;
+  background: radial-gradient(circle at center, rgba(255, 222, 150, 0.35), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .modalIcon {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -412,65 +417,62 @@
   line-height: 1;
 }
 
-.modalHeader h2 {
+.modalContent h2 {
+  color: #1c1400;
+  font-size: 1.85rem;
+  font-weight: 700;
   margin-bottom: 0;
+  letter-spacing: 0.5px;
 }
 
 .modalBody {
-  color: #856A00;
+  color: #2b1c00;
 }
 
 .modalDescription {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  color: #EFBF04;
-  white-space: pre-line;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: #2b1c00;
 }
 
 .modalSubheading {
-  color: #EFBF04;
-  font-size: 1.3rem;
+  color: #2b1c00;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1.25rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .modalList {
   list-style: none;
   padding: 0;
   margin-bottom: 0;
+  display: grid;
+  gap: 0.6rem;
 }
 
 .modalList li {
-  padding: 0.75rem 0;
-  padding-left: 2rem;
-  position: relative;
-  color: #C2B067;
-  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: #2b1c00;
+  line-height: 1.45;
   font-size: 0.95rem;
-  font-weight: 400;
 }
 
 .bulletIcon {
-  position: absolute;
-  left: 0;
-  font-size: 1rem;
-  line-height: 1;
-  display: inline-block;
-  width: 1.5rem;
-  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #311d00;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .modalExamples {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(133, 106, 0, 0.3);
-}
-
-.modalExamples p {
-  color: #856A00;
-  line-height: 1.8;
+  display: none;
 }
 
 @media (max-width: 968px) {

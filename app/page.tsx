@@ -13,37 +13,39 @@ export default function Home() {
     mindful: {
       title: 'Mindful Art',
       icon: '🎨',
-      description: 'Hand-drawn mandalas created with patience and intention.\n\nEach piece brings calm, balance, and presence to your space.',
+      description:
+        'Hand-drawn mandalas crafted with patience to bring calm, balance, and presence to your space.',
       points: [
-        'Meticulously hand-drawn with attention to detail',
-        'Created with mindfulness and intention',
-        'Promotes calm and balance',
-        'Ideal for meditation spaces, bedrooms, and workspaces',
-        'Unique pieces that carry positive energy'
+        'Meticulous line work guided by mindfulness',
+        'Designed to settle the mind and soften the space',
+        'Perfect for meditation corners or bedside tables',
+        'Each piece finished with a grounding center motif',
+        'Lightweight cardstock ready for framing or gifting'
       ]
     },
     spiritual: {
       title: 'Spiritual Connection',
       icon: '✨',
-      description: 'Mandalas represent unity and wholeness.\n\nExplore designs inspired by meditation, energy flow, and inner reflection.',
+      description:
+        'Symbol-rich mandalas inspired by meditation and inner reflection to anchor daily rituals.',
       points: [
-        'Symbols of unity and cosmic order',
-        'Inspired by ancient spiritual traditions',
-        'Enhances meditation and reflection',
-        'Connects you with inner self and higher consciousness',
-        'Perfect for sacred spaces and altars'
+        'Motifs drawn from ancient sacred geometry',
+        'Hues selected to harmonize breath and focus',
+        'Pairs beautifully with incense or crystal layouts',
+        'Sized to rest comfortably on any altar surface',
+        'Protected with a matte seal for lasting color'
       ]
     },
     energy: {
       title: 'Positive Energy Design',
       icon: '🌟',
-      description: 'Crafted to radiate harmony and good energy.\n\nElevate your room, workspace, or personal altar.',
+      description:
+        'Vibrant mandalas engineered to radiate harmony and refresh the energy of any room.',
       points: [
-        'Radiates positive vibrations',
-        'Designed for optimal energy flow',
-        'Enhances any space\'s atmosphere',
-        'Ideal for feng shui and energy healing',
-        'Brings harmony and balance to your environment'
+        'Soft layered tones that guide a natural flow of energy',
+        'Designed to stand out gently on any wall',
+        'Thoughtful symmetry that supports harmony and feng shui',
+        'Printed on high-quality paper to keep colors rich',
       ]
     }
   }
@@ -145,19 +147,14 @@ export default function Home() {
               <h2>{getModalContent()?.title}</h2>
             </div>
             <div className={styles.modalBody}>
-              <p className={styles.modalDescription}>
-                {getModalContent()?.description?.split('\n').map((line, index) => (
-                  <span key={index}>
-                    {line}
-                    {index < getModalContent()?.description.split('\n').length - 1 && <br />}
-                  </span>
-                ))}
-              </p>
+              <p className={styles.modalDescription}>{getModalContent()?.description}</p>
               <h3 className={styles.modalSubheading}>What Makes Our Mandalas Special</h3>
               <ul className={styles.modalList}>
                 {getModalContent()?.points.map((point, index) => (
                   <li key={index}>
-                    <span className={styles.bulletIcon}>{getModalContent()?.icon}</span>
+                    <span className={styles.bulletIcon} aria-hidden="true">
+                      ✓
+                    </span>
                     {point}
                   </li>
                 ))}
