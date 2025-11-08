@@ -51,18 +51,21 @@ export default function Home() {
           <div className={styles.featureGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🎨</div>
-              <h3 className={styles.beautifulArt}>Beautiful Art</h3>
-              <p className={styles.cardDescription}>Curated collection of stunning artworks and designs</p>
+              <h3 className={styles.beautifulArt}>Mindful Art</h3>
+              <p className={styles.cardDescription}>A collection of hand-drawn mandalas created with patience and intention.
+              Each piece is designed to bring calm, balance, and presence into your space.</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>✨</div>
-              <h3 className={styles.beautifulArt}>Creative Inspiration</h3>
-              <p className={styles.cardDescription}>Get inspired by our diverse range of creative pieces</p>
+              <h3 className={styles.beautifulArt}>Spiritual Connection</h3>
+              <p className={styles.cardDescription}>Mandalas represent unity and wholeness.
+              Explore designs inspired by meditation, energy flow, and inner reflection.</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🌟</div>
-              <h3 className={styles.beautifulArt}>Quality Design</h3>
-              <p className={styles.cardDescription}>Every piece is carefully selected for its quality and beauty</p>
+              <h3 className={styles.beautifulArt}>Positive Energy Design</h3>
+              <p className={styles.cardDescription}>Every mandala is crafted with care to radiate harmony and good energy.
+              Perfect for elevating your room, workspace, or personal altar.</p>
             </div>
           </div>
         </div>

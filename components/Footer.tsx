@@ -4,12 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.section}>
-            <h3>Mandala</h3>
-            <p>Creating beautiful experiences through art and design.</p>
-          </div>
-          
+        <div className={styles.content}> 
           <div className={styles.section}>
             <h4>Quick Links</h4>
             <ul>
@@ -23,9 +18,8 @@ export default function Footer() {
           <div className={styles.section}>
             <h4>Connect</h4>
             <ul>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
+              <li><a href="https://www.instagram.com/mandala.by.bhavna/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://x.com/8187_Bhavna" target="_blank" rel="noopener noreferrer">Twitter</a></li>
             </ul>
           </div>
         </div>

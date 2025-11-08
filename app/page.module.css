@@ -195,6 +195,7 @@
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #C2B067;
 }
 
 .cta p {
@@ -204,20 +205,20 @@
 }
 
 .ctaButton {
-  background: #ffffff;
-  color: #3D4127;
+  background: transparent;
+  border: 2px solid #856A00;
+  color: #856A00;
   padding: 1rem 2.5rem;
   border-radius: 50px;
   font-weight: 600;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .ctaButton:hover {
+  background: rgba(133, 106, 0, 0.1);
+  color: #856A00;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  color: #3D4127;
 }
 
 .cardDescription {
