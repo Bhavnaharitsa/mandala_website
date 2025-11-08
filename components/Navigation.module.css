@@ -1,5 +1,5 @@
 .navbar {
-  background: #3D4127;
+  background: #0E1602;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   position: sticky;
@@ -20,8 +20,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: var(--font-great-vibes), cursive;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background-color: #C2B067;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -36,7 +35,7 @@
 
 .navLinks a {
   font-weight: 500;
-  color: #856A00;
+  color: #C2B067;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -84,7 +83,7 @@
     top: 70px;
     left: 0;
     right: 0;
-    background: #3D4127;
+    background: #0E1602;
     flex-direction: column;
     padding: 2rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);

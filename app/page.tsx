@@ -1,5 +1,6 @@
 import styles from './page.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -7,6 +8,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
+          <div className={styles.logo}>
+            <Image
+              src="/mandala_logo.png"
+              alt="Mandalas logo"
+              width={200}
+              height={200}
+              priority
+            />
+          </div>
+
           <h1 className={styles.heroTitle}>Mandalas</h1>
           <p className={styles.heroSubtitle}>
             Discover the beauty of art, creativity, and inspiration
@@ -20,12 +31,12 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
         <div className={styles.heroImage}>
           <div className={styles.gradientCircle}></div>
         </div>
       </section>
 
-      {/* Features Section */}
       <section className={`section ${styles.features}`}>
         <div className="container">
           <h2 className="section-title">What We Offer</h2>
@@ -62,4 +73,3 @@ export default function Home() {
     </div>
   )
 }
-

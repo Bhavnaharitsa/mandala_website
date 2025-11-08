@@ -18,12 +18,23 @@
 .heroContent {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .heroTitle {
-  font-size: calc(3.5rem + 40px);
+  font-size: calc(3.5rem + 60px);
   font-weight: 800;
-  margin-bottom: 1.5rem;
   color: #C2B067;
   line-height: 1.2;
   margin-top: -320px;
@@ -31,8 +42,8 @@
 }
 
 .heroSubtitle {
-  font-size: 2rem;
-  color: var(--text-light);
+  font-size: 1.5rem;
+  color: white;
   margin-bottom: 2rem;
   line-height: 1.8;
   font-family: var(--font-great-vibes), cursive;
@@ -107,9 +118,13 @@
 
 /* Features Section */
 .features {
-  background: #3D4127;
+  background: #0E1602;
   padding-top: 0 !important;
-  margin-top: -400px;
+  margin-top: -250px;
+}
+
+.features .section-title {
+  margin-top: 3rem;
 }
 
 .featureGrid {
@@ -157,7 +172,7 @@
 
 /* CTA Section */
 .cta {
-  background: #3D4127;
+  background: #0E1602;
   color: #856A00;
   padding: 5rem 2rem;
   text-align: center;
