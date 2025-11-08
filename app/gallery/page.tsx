@@ -16,8 +16,8 @@ type GalleryItem = {
 const galleryImages: GalleryItem[] = [
   {
     id: 1,
-    title: 'Artwork 1',
-    category: 'Digital',
+    title: 'Bookmarks',
+    category: 'Paper cut',
     image: '/bookmark_mandala.png',
     alt: 'Gold bookmark mandala artwork',
   },
