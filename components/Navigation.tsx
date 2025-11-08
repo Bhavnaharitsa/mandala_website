@@ -34,7 +34,10 @@ export default function Navigation() {
         <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} onClick={() => setIsMenuOpen(false)}>
+              <Link 
+                href={link.href} 
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {link.label}
               </Link>
             </li>

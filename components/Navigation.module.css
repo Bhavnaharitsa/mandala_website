@@ -47,12 +47,20 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: #C2B067;
   transition: width 0.3s ease;
 }
 
 .navLinks a:hover::after {
   width: 100%;
+}
+
+.navLinks a:hover {
+  color: white !important;
+}
+
+.navLinks a[href="/gallery"]:hover {
+  color: white !important;
 }
 
 .menuButton {

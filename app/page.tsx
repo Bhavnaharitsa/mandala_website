@@ -9,13 +9,13 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.logo}>
-            <Image
-              src="/mandala_logo.png"
+            {/* <Image
+              src={mandalaLogo}
               alt="Mandalas logo"
               width={200}
               height={200}
               priority
-            />
+            /> */}
           </div>
 
           <h1 className={styles.heroTitle}>Mandalas</h1>
@@ -33,6 +33,14 @@ export default function Home() {
         </div>
 
         <div className={styles.heroImage}>
+          {/* <Image
+            src={mandalaLogo}
+            alt="Mandalas logo"
+            width={400}
+            height={400}
+            priority
+            className={styles.heroLogoImage}
+          /> */}
           <div className={styles.gradientCircle}></div>
         </div>
       </section>
@@ -44,17 +52,17 @@ export default function Home() {
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🎨</div>
               <h3 className={styles.beautifulArt}>Beautiful Art</h3>
-              <p>Curated collection of stunning artworks and designs</p>
+              <p className={styles.cardDescription}>Curated collection of stunning artworks and designs</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>✨</div>
               <h3 className={styles.beautifulArt}>Creative Inspiration</h3>
-              <p>Get inspired by our diverse range of creative pieces</p>
+              <p className={styles.cardDescription}>Get inspired by our diverse range of creative pieces</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🌟</div>
               <h3 className={styles.beautifulArt}>Quality Design</h3>
-              <p>Every piece is carefully selected for its quality and beauty</p>
+              <p className={styles.cardDescription}>Every piece is carefully selected for its quality and beauty</p>
             </div>
           </div>
         </div>
