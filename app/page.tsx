@@ -16,11 +16,10 @@ export default function Home() {
       description:
         'Hand-drawn mandalas crafted with patience to bring calm, balance, and presence to your space.',
       points: [
-        'Meticulous line work guided by mindfulness',
-        'Designed to settle the mind and soften the space',
-        'Perfect for meditation corners or bedside tables',
-        'Each piece finished with a grounding center motif',
-        'Lightweight cardstock ready for framing or gifting'
+        'Created to gently soothe the mind and soften the atmosphere',
+        'Ideal for meditation spaces, reading nooks, or bedside calm',
+        'Each piece centers around a grounding focal point',
+        'Printed on light, frame-ready cardstock—easy to gift or display',
       ]
     },
     spiritual: {
