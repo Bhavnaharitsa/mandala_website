@@ -9,6 +9,8 @@ import mandalaLogo from './mandala_logo.png'
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
   const featuresRef = useRef<HTMLElement | null>(null)
+  const hasShownCardsRef = useRef(false)
+  const [cardsVisible, setCardsVisible] = useState(false)
 
   const modalContent = {
     mindful: {
@@ -58,7 +60,20 @@ export default function Home() {
   useEffect(() => {
     if (!featuresRef.current) return
 
-    setActiveModal(null)
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+
+      if (entry.isIntersecting && !hasShownCardsRef.current) {
+        hasShownCardsRef.current = true
+        setCardsVisible(true)
+      }
+    }, { threshold: 0.35 })
+
+    observer.observe(featuresRef.current)
+
+    return () => {
+      observer.disconnect()
+    }
   }, [])
 
   return (
@@ -100,9 +115,10 @@ export default function Home() {
       <section ref={featuresRef} className={`section ${styles.features}`}>
         <div className="container">
           <h2 className="section-title">What We Offer</h2>
-          <div className={styles.featureGrid}>
-            <div 
-              className={`${styles.featureCard} ${styles.mindfulArtCard}`}
+          <div className={`${styles.featureGrid} ${cardsVisible ? styles.featureGridVisible : ''}`}>
+            <div
+              className={`${styles.featureCard} ${styles.mindfulArtCard} ${cardsVisible ? styles.cardVisible : ''}`}
+              style={{ transitionDelay: cardsVisible ? '0ms' : '0ms' }}
               onClick={() => setActiveModal('mindful')}
             >
               <div className={styles.featureIcon}>🎨</div>
@@ -110,8 +126,9 @@ export default function Home() {
               <p className={styles.cardDescription}>A collection of hand-drawn mandalas created with patience and intention.
               Each piece is designed to bring calm, balance, and presence into your space.</p>
             </div>
-            <div 
-              className={`${styles.featureCard} ${styles.spiritualCard}`}
+            <div
+              className={`${styles.featureCard} ${styles.spiritualCard} ${cardsVisible ? styles.cardVisible : ''}`}
+              style={{ transitionDelay: cardsVisible ? '120ms' : '0ms' }}
               onClick={() => setActiveModal('spiritual')}
             >
               <div className={styles.featureIcon}>✨</div>
@@ -119,8 +136,9 @@ export default function Home() {
               <p className={styles.cardDescription}>Mandalas represent unity and wholeness.
               Explore designs inspired by meditation, energy flow, and inner reflection.</p>
             </div>
-            <div 
-              className={`${styles.featureCard} ${styles.energyCard}`}
+            <div
+              className={`${styles.featureCard} ${styles.energyCard} ${cardsVisible ? styles.cardVisible : ''}`}
+              style={{ transitionDelay: cardsVisible ? '240ms' : '0ms' }}
               onClick={() => setActiveModal('energy')}
             >
               <div className={styles.featureIcon}>🌟</div>

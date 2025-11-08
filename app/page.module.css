@@ -181,14 +181,25 @@
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(45px) scale(0.95);
 }
 
 .featureCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.featureGridVisible .featureCard {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.cardVisible {
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.24, 1.4, 0.4, 1);
 }
 
 /* Mindful Art Card Specific Styles */
