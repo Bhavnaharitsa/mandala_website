@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import mandalaLogo from './mandala_logo.png'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
@@ -60,14 +61,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
+
           <div className={styles.logo}>
-            {/* <Image
+            <Image
               src={mandalaLogo}
               alt="Mandalas logo"
-              width={200}
-              height={200}
+              width={400}
+              height={400}
               priority
-            /> */}
+              className={styles.heroLogoImage}
+            />
           </div>
 
           <h1 className={styles.heroTitle}>Mandalas</h1>
@@ -85,14 +88,6 @@ export default function Home() {
         </div>
 
         <div className={styles.heroImage}>
-          {/* <Image
-            src={mandalaLogo}
-            alt="Mandalas logo"
-            width={400}
-            height={400}
-            priority
-            className={styles.heroLogoImage}
-          /> */}
           <div className={styles.gradientCircle}></div>
         </div>
       </section>
