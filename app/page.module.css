@@ -156,6 +156,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 .featureCard:hover {
@@ -163,9 +164,72 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Mindful Art Card Specific Styles */
+.mindfulArtCard {
+  cursor: pointer;
+  position: relative;
+}
+
+.mindfulArtCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(194, 176, 103, 0.4), 0 0 20px rgba(194, 176, 103, 0.2);
+  border-color: rgba(194, 176, 103, 0.5);
+}
+
+.mindfulArtCard:hover .featureIcon {
+  animation: iconPulse 1.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
+
+/* Spiritual Connection Card Specific Styles */
+.spiritualCard {
+  cursor: pointer;
+  position: relative;
+}
+
+.spiritualCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(194, 176, 103, 0.4), 0 0 20px rgba(194, 176, 103, 0.2);
+  border-color: rgba(194, 176, 103, 0.5);
+}
+
+.spiritualCard:hover .featureIcon {
+  animation: iconPulse 1.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
+
+/* Positive Energy Design Card Specific Styles */
+.energyCard {
+  cursor: pointer;
+  position: relative;
+}
+
+.energyCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(194, 176, 103, 0.4), 0 0 20px rgba(194, 176, 103, 0.2);
+  border-color: rgba(194, 176, 103, 0.5);
+}
+
+.energyCard:hover .featureIcon {
+  animation: iconPulse 1.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(194, 176, 103, 0.5));
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px rgba(194, 176, 103, 0.8));
+  }
+}
+
 .featureIcon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .featureCard h3 {
@@ -223,6 +287,132 @@
 
 .cardDescription {
   color: white !important
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  background: #0E1602;
+  border: 2px solid #856A00;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #C2B067;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modalClose:hover {
+  background: rgba(194, 176, 103, 0.2);
+  transform: rotate(90deg);
+}
+
+.modalContent h2 {
+  color: #C2B067;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modalBody {
+  color: #856A00;
+}
+
+.modalDescription {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.modalContent h3 {
+  color: #EFBF04;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modalList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.modalList li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #856A00;
+  line-height: 1.6;
+}
+
+.modalList li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+}
+
+.modalExamples {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(133, 106, 0, 0.3);
+}
+
+.modalExamples p {
+  color: #856A00;
+  line-height: 1.8;
 }
 
 @media (max-width: 968px) {
