@@ -367,6 +367,25 @@
   margin-bottom: 1.5rem;
 }
 
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modalIcon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+.modalHeader h2 {
+  margin-bottom: 0;
+}
+
 .modalBody {
   color: #856A00;
 }

@@ -11,6 +11,7 @@ export default function Home() {
   const modalContent = {
     mindful: {
       title: 'Mindful Art',
+      icon: '🎨',
       description: 'Our Mindful Art collection features hand-drawn mandalas created with patience and intention. Each piece is designed to bring calm, balance, and presence into your space.',
       points: [
         'Hand-drawn with meticulous attention to detail',
@@ -23,6 +24,7 @@ export default function Home() {
     },
     spiritual: {
       title: 'Spiritual Connection',
+      icon: '✨',
       description: 'Mandalas represent unity and wholeness. Our spiritual collection explores designs inspired by meditation, energy flow, and inner reflection.',
       points: [
         'Symbols of unity and cosmic order',
@@ -35,6 +37,7 @@ export default function Home() {
     },
     energy: {
       title: 'Positive Energy Design',
+      icon: '🌟',
       description: 'Every mandala is crafted with care to radiate harmony and good energy. Perfect for elevating your room, workspace, or personal altar.',
       points: [
         'Designed to radiate positive vibrations',
@@ -145,7 +148,10 @@ export default function Home() {
         <div className={styles.modalOverlay} onClick={() => setActiveModal(null)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={styles.modalClose} onClick={() => setActiveModal(null)}>×</button>
-            <h2>{getModalContent()?.title}</h2>
+            <div className={styles.modalHeader}>
+              <div className={styles.modalIcon}>{getModalContent()?.icon}</div>
+              <h2>{getModalContent()?.title}</h2>
+            </div>
             <div className={styles.modalBody}>
               <p className={styles.modalDescription}>
                 {getModalContent()?.description}
