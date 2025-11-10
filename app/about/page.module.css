@@ -36,22 +36,32 @@
 }
 
 .valueCard {
-  background: #EFBF04;
-  padding: 1.5rem;
-  border-radius: 15px;
-  border-left: 4px solid #856A00;
+  background: rgba(61, 65, 39, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .valueCard h3 {
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #856A00;
+  margin-bottom: 0.75rem;
+  color: #EFBF04;
 }
 
 .valueCard p {
   font-size: 1rem;
   margin-bottom: 0;
-  color: #856A00;
+  color: rgba(239, 191, 4, 0.88);
+  line-height: 1.65;
 }
 
 .imageSection {

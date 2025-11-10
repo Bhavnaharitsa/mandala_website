@@ -21,7 +21,13 @@ const galleryImages: GalleryItem[] = [
     image: '/bookmark_mandala.png',
     alt: 'Gold bookmark mandala artwork',
   },
-  { id: 2, title: 'Artwork 2', category: 'Traditional' },
+  {
+    id: 2,
+    title: 'Artwork 2',
+    category: 'Traditional',
+    image: 'https://res.cloudinary.com/ds1xd7ty0/image/upload/v1762650422/IMG_1467_zch3bc.heic',
+    alt: 'Detailed mandala bookmark with vibrant colors',
+  },
   { id: 3, title: 'Artwork 3', category: 'Digital' },
   { id: 4, title: 'Artwork 4', category: 'Mixed Media' },
   { id: 5, title: 'Artwork 5', category: 'Digital' },
@@ -70,7 +76,7 @@ export default function Gallery() {
           <p className={styles.galleryDescription}>
             Explore our curated collection of beautiful artworks and designs
           </p>
-
+          
           <div className={styles.galleryGrid}>
             {galleryImages.map((image, index) => (
               <div
@@ -97,12 +103,12 @@ export default function Gallery() {
                     />
                   </div>
                 ) : (
-                  <div className={styles.imagePlaceholder}>
-                    <div className={styles.placeholderContent}>
-                      <span className={styles.placeholderIcon}>🖼️</span>
-                      <span className={styles.placeholderText}>{image.title}</span>
-                    </div>
+                <div className={styles.imagePlaceholder}>
+                  <div className={styles.placeholderContent}>
+                    <span className={styles.placeholderIcon}>🖼️</span>
+                    <span className={styles.placeholderText}>{image.title}</span>
                   </div>
+                </div>
                 )}
                 <div className={styles.imageInfo}>
                   <h3>{image.title}</h3>

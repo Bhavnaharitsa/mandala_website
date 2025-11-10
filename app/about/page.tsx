@@ -10,16 +10,14 @@ export default function About() {
           <div className={styles.content}>
             <div className={styles.textContent}>
               <h2>Our Story</h2>
-              <p>
-                Welcome to Mandala, a space dedicated to celebrating art, creativity, 
-                and inspiration. We believe that art has the power to transform, inspire, 
-                and connect people across cultures and boundaries.
-              </p>
-              <p>
-                Our mission is to curate and showcase beautiful artworks that speak to 
-                the soul, whether through digital creations, traditional mediums, or 
-                innovative mixed media approaches.
-              </p>
+             <p>
+             Welcome to Mandala — a space shaped by my own love for quiet creativity and mindful making. What began as something I would do in my free time slowly became a meaningful part of my day-to-day life. Drawing and creating helped me feel grounded, focused, and connected to myself.
+
+Over time, this hobby grew into a deliberate practice, and eventually into something I wanted to share.
+</p>
+<p>
+ Here, I curate and create artworks that reflect patience, balance, and personal expression. Each piece is made with attention and intention, and my goal is simply to share that experience — not just the art itself.
+             </p>
               
               <h2>Our Values</h2>
               <div className={styles.valuesGrid}>
