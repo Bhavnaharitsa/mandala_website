@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
         pathname: '/ds1xd7ty0/image/upload/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        pathname: '/**',
+      },
     ],
   },
 }
